@@ -27,12 +27,12 @@ Screen size: `wwwxhhh` must be placed at the beginning of the file (otherwise th
 
 ## Example
 ### Loop:
-`12x17sdpg4 (Loop forever)`
-Set the screen to 128 (width) by 32 (height) pixels. Then go down-left and increment that pixel's value. Loop.
+```12x17sdpg4 (Loop forever)```
+Set the screen to 128 (width) by 32 (height) pixels. Then go down-left and increment that pixel's value. Then loop that forever.\
 ![Image of the result of the 12x17 loop.](images/loop.png)
 
 ### Hello World
-`74x10
+```74x10
 sdnsnsnsnsnsnsnwwwdndndndnwwwnsnsnssnsnsn(H)
 ddndndndndnwwwanananasnsnwwnwnwnwndndndndn(E)
 ddnsnsnsnsnsnsndndndndn(L)ssss
@@ -45,5 +45,7 @@ nwnwnwnwnwnwndndndndsnsnsananandsndsndsn(R)ssss
 ddnsnsnsnsnsnsndndndndn(L)ssssdd
 ndnsnsnsnsnsnsnanddndndwnwnwnwnwnwanan(D)dddddddd
 nsnsnsnsnssn(!)ssddd
-dpg4`
+dpg4
+```
+
 ![Image of the result of running the Hello World program.](images/hello_world.png)
