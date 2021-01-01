@@ -1,6 +1,9 @@
 # gWASD
 A simple joke language inspired by [WASD](https://esolangs.org/wiki/WASD) for graphical programming.
 
+## Live editor
+There is a live editor available [here](https://zachspi.ddns.net/projects/gWASD/gWASD.html)
+
 ## Commands
 - `w` - Move pointer up one row
 - `a` - Move pointer left one column
