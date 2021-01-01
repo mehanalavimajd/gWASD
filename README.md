@@ -24,8 +24,9 @@ All commands are case-insensitive.
 ## Syntax
 Move commands simply move the pointer, so by running a `w`, the pointer is simply moved up one location. Same goes for increment/decrement operations.\
 The Go command takes an argument for how many characters it is supposed to back up (i.e. `g1` would loop back to itself while `g3` would execute the previous two commands in a loop).\
-Comments are enclosed by `()` and comments may not contain parentheses.
-Screen size: `wwwxhhh` must be placed at the beginning of the file (otherwise the image dimensions will be unknown). `www` is the width of the image in pixels, while `hhh` is the height in pixels.
+Comments are enclosed by `()` and comments may not contain parentheses.\
+Screen size: `wwwxhhh` must be placed at the beginning of the file (otherwise the image dimensions will be unknown). `www` is the width of the image in pixels, while `hhh` is the height in pixels.\
+Decisions: nope.
 
 
 ## Example
