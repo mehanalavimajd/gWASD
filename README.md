@@ -13,6 +13,7 @@ There is a live editor available [here](https://zachspi.ddns.net/projects/gWASD/
 - `p` - Increment location's value
 - `x` - Screen size separator
 - `g` - Go (back)
+- `b` - Branch (on zero)
 - `(` - Begin comment
 - `)` - End comment
 
@@ -25,12 +26,11 @@ There is a live editor available [here](https://zachspi.ddns.net/projects/gWASD/
 - Screen size: `wwwxhhh` must be placed at the beginning of the file (otherwise the image dimensions will be unknown). `www` is the width of the image in pixels, while `hhh` is the height in pixels.
 - Move commands simply move the pointer, so by running a `w`, the pointer is simply moved up one location. Same goes for increment/decrement operations.
 - The Go command takes an argument for how many characters it is supposed to back up (i.e. `g1` would loop back to itself while `g3` would execute the previous two commands in a loop).
+- Decisions: `b` takes similar syntax to the Go command. It branches (back) by a specified index delta if the current pixel is of value 0.
 - Comments are enclosed by `()` and comments may not contain parentheses.
-- Decisions: nope.
 
-
-## Example
-### Loop:
+## Examples
+### Loop
 ```
 12x17sdpg4 (Loop forever)
 ```
@@ -56,3 +56,12 @@ dpg4
 ```
 
 ![Image of the result of running the Hello World program.](images/hello_world.png)
+
+### Branching
+```
+30x5
+pspspspsb10
+dg14
+```
+
+![Image of the result of a branching program.](images/branch.png)

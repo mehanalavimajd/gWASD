@@ -87,7 +87,7 @@ function run() {
 
     // Get image dimentions
     var screenDelimiter = source.indexOf("x");
-    var index = source.search(/[wasdgnp\(\)]/);
+    var index = source.search(/[wasdgbnp\(\)]/);
     var width = parseInt(source.substr(0, screenDelimiter), 10);
     var height = parseInt(source.substr(screenDelimiter + 1, index - 1), 10);
 
@@ -160,12 +160,25 @@ function run() {
                 break;
 
             case 'g':
-                var delta = parseInt(source.substring(index + 1).match(/^[0-9]+/m), 10);
+                var delta = parseInt(source.substring(index + 1).match(/^[\-0-9]+/m), 10);
                 if (isNaN(delta)) {
                     alert("Error! \"g\" command encountered with non-numeric delta at index: '" + index + "'");
                     index = -1; // exit
                 } else {
                     index -= delta;
+                }
+                break;
+
+            case 'b':
+                var deltaRaw = source.substring(index + 1).match(/^[-0-9]+/m);
+                var delta = parseInt(deltaRaw, 10);
+                if (isNaN(delta)) {
+                    alert("Error! \"b\" command encountered with non-numeric delta at index: '" + index + "'");
+                    index = -1; // exit
+                } else if (colorIndicies[yIndex * width + xIndex] === 0) {  // Only branch on 0
+                    index -= delta;
+                } else {
+                    index += deltaRaw.length + 1;
                 }
                 break;
             
