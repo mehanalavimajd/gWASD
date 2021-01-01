@@ -1,5 +1,7 @@
 
 window.onload = function () {
+    
+    document.getElementById("scale").value = 1;
     if (typeof(Storage) !== "undefined") {
         if (localStorage.gWASD) {
         document.getElementById("source").value = localStorage.gWASD;
@@ -11,9 +13,7 @@ window.onload = function () {
         //     document.getElementById("debug").checked = (localStorage.debug == "true");
         // }
         document.getElementById("save-button").style.display = "inline";    // Only show if local saving is possible
-    } else {
-        document.getElementById("scale").value = 1;
-    }
+    } 
 }
 
 function save() {
