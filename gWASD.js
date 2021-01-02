@@ -160,7 +160,7 @@ function run() {
                 break;
 
             case 'g':
-                var delta = parseInt(source.substring(index + 1).match(/^[\-0-9]+/m), 10);
+                var delta = parseInt(source.substring(index + 1).match(/^[-0-9]+/m), 10);
                 if (isNaN(delta)) {
                     alert("Error! \"g\" command encountered with non-numeric delta at index: '" + index + "'");
                     index = -1; // exit
@@ -170,7 +170,7 @@ function run() {
                 break;
 
             case 'b':
-                var deltaRaw = source.substring(index + 1).match(/^[-0-9]+/m);
+                var deltaRaw = String(source.substring(index + 1).match(/^[-0-9]+/m));
                 var delta = parseInt(deltaRaw, 10);
                 if (isNaN(delta)) {
                     alert("Error! \"b\" command encountered with non-numeric delta at index: '" + index + "'");
@@ -178,7 +178,7 @@ function run() {
                 } else if (colorIndicies[yIndex * width + xIndex] === 0) {  // Only branch on 0
                     index -= delta;
                 } else {
-                    index += deltaRaw.length + 1;
+                    index += deltaRaw.length;
                 }
                 break;
             
@@ -220,10 +220,10 @@ function run() {
             // Request the animation frame
             window.requestAnimationFrame(main);
 
+            index += 1;
             xIndexView.innerHTML = "x-index: " + xIndex;
             yIndexView.innerHTML = "y-index: " + yIndex;
             indexView.innerHTML = "Parse-index: " + index;
-            index += 1;
         } else {
             stopImageRender = false;
             console.log("Stopped");
