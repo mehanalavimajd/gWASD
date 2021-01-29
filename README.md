@@ -2,7 +2,7 @@
 A simple joke language inspired by [WASD](https://esolangs.org/wiki/WASD) for graphical programming.
 
 ## Live editor
-There is a live editor available [here](https://zachspi.ddns.net/projects/gWASD/gWASD.html)
+There is a live editor available [here](https://projects.zachspi.ddns.net/gWASD/gWASD.html)
 
 ## Commands
 - `w` - Move pointer up one row
